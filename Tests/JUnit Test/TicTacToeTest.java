@@ -13,7 +13,6 @@ class TicTacToeTest {
     void setupGame() {
         t1 = new TicTacToe();
 
-
         for (int i=0; i<3; i++) {
             for (int j =0; j<3; j++){
                 t1.board[i][j] = '_';
@@ -28,7 +27,7 @@ class TicTacToeTest {
         }
         catch (Exception e) {
             e.printStackTrace();
-            fail("PrintBoard() threw exceptio");
+            fail("PrintBoard() threw exception");
         }
     }
 
@@ -55,12 +54,15 @@ class TicTacToeTest {
 
                 t1.board[t1.row][t1.col] = t1.turn;
 
+                t1.PrintBoard();
+
                 if (t1.GameOver(t1.row, t1.col)) {
                     playing = false;
                     System.out.println("GAME OVER! PLAYER " + t1.turn + " WINS!");
+
                 }
 
-                t1.PrintBoard();
+                //t1.PrintBoard();
 
                 if (t1.turn=='X') {
                     t1.turn = 'O';
@@ -68,6 +70,7 @@ class TicTacToeTest {
                 else {
                     t1.turn = 'X';
                 }
+
             }
 
         }
